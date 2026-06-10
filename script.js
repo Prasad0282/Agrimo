@@ -16,13 +16,13 @@ servicesDots.forEach((dot) => {
     let offset = 0;
     const width = window.innerWidth;
     if (width > 1200) {
-      offset = index * 25; // 4 items displayed
+      offset = index * 25;
     } else if (width > 900) {
-      offset = index * 33.333; // 3 items displayed
+      offset = index * 33.333;
     } else if (width > 600) {
-      offset = index * 50; // 2 items displayed
+      offset = index * 50;
     } else {
-      offset = index * 100; // 1 item displayed
+      offset = index * 100;
     }
 
     servicesTrack.style.transform = `translateX(-${offset}%)`;
@@ -55,7 +55,7 @@ testiNext.addEventListener("click", () => {
   if (testiIndex < maxIndex) {
     testiIndex++;
   } else {
-    testiIndex = 0; // wrap around
+    testiIndex = 0;
   }
   updateTestimonialsPosition();
 });
@@ -64,15 +64,15 @@ testiPrev.addEventListener("click", () => {
   if (testiIndex > 0) {
     testiIndex--;
   } else {
-    testiIndex = 3 - getTestimonialsPerView(); // wrap around
+    testiIndex = 3 - getTestimonialsPerView();
   }
   updateTestimonialsPosition();
 });
 
-window.addEventListener("resize", () => {
-  testiIndex = 0;
-  updateTestimonialsPosition();
-});
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
+// window.addEventListener("resize", () => {
+//   testiIndex = 0;
+//   updateTestimonialsPosition();
+// });
+// document.addEventListener("contextmenu", (e) => {
+//   e.preventDefault();
+// });

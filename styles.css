@@ -2,11 +2,11 @@
        COLOR TOKENS & SYSTEM DEFAULTS
        ═══════════════════════════════════════════ */
 :root {
-  --brand-dark: #1f3e1e; /* Rich Forest Green */
-  --brand-green: #498048; /* Mid Green accent */
-  --brand-lime: #82b444; /* Lighter accent green */
-  --brand-yellow: #e1cd4d; /* Signature Yellow */
-  --brand-cream: #f4f2ea; /* Cream background */
+  --brand-dark: #1f3e1e;
+  --brand-green: #498048;
+  --brand-lime: #82b444;
+  --brand-yellow: #e1cd4d;
+  --brand-cream: #f4f2ea;
   --white: #ffffff;
   --text-dark: #162415;
   --text-mid: #546253;
@@ -54,7 +54,6 @@ img {
   display: block;
 }
 
-/* ─── TYPOGRAPHY ─────────────────────────── */
 h1,
 h2,
 h3,
@@ -87,16 +86,16 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px; /* Larger, matching the Figma design */
-  font-weight: 600; /* Slightly softer than 700 */
-  text-transform: capitalize; /* Changes "WHO WE ARE" to "Who We Are" */
-  letter-spacing: normal; /* Removes the wide letter spacing */
-  color: var(--brand-dark); /* Darker text color */
-  background: var(--white); /* Pure white background */
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  color: var(--brand-dark);
+  background: var(--white);
   padding: 8px 24px;
   border-radius: var(--radius-full);
   margin-bottom: 24px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Very subtle shadow to pop off the cream background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 .eyebrow-icon,
 .eyebrow svg {
@@ -108,44 +107,40 @@ h2 {
 /* ═══════════════════════════════════════════
        
        ═══════════════════════════════════════════ */
-/* Ensure the  overlays the hero banner image underneath */
+
 .navbar {
   position: absolute;
-  top: 24px; /* Matches the  new margin-top */
-  left: 24px; /* Matches the  new margin-left */
-  right: 24px; /* Matches the  new margin-right */
+  top: 24px;
+  left: 24px;
+  right: 24px;
   width: auto;
   z-index: 50;
 }
 .navbar .nav-inner {
   max-width: none;
-  padding: 0 0 0 40px; /* Keep left padding for the logo, remove right padding */
-}
-
-/* Push the hero content down so it isn't hidden behind the text links */
-.hero-banner {
-  position: relative;
-  padding-top: 120px; /* Adjust based on your header height */
-  /* Make sure your background tomato image covers this section */
+  padding: 0 0 0 40px;
 }
 
 .hero-banner {
   position: relative;
-  /* Swapped to your local banner.jpg */
+  padding-top: 120px;
+}
+
+.hero-banner {
+  position: relative;
+
   background:
     linear-gradient(rgba(31, 62, 30, 0.65), rgba(31, 62, 30, 0.65)),
     url("./banner.jpg");
   background-size: cover;
   background-position: center;
-  height: 480px; /* Slightly taller to match Figma proportions */
+  height: 480px;
   display: flex;
   align-items: center;
-  /* Make ALL 4 corners rounded so it looks like a floating card */
   border-radius: 32px;
-  /* Give it margins on all sides so the cream background shows above it */
   margin: 24px;
 }
-/* Layout for the right side of the nav */
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -165,7 +160,7 @@ h2 {
   background-color: var(--brand-cream, #fdfbf7);
   padding: 0 24px 0 30px;
   border-bottom-left-radius: 32px;
-  border-top-right-radius: 32px; /* Perfectly matches banner radius */
+  border-top-right-radius: 32px;
 }
 .nav-actions-overlay::before {
   content: "";
@@ -174,7 +169,7 @@ h2 {
   left: -24px;
   width: 24px;
   height: 24px;
-  /* Radial gradient flawlessly draws an inverted corner, preventing wedge glitches */
+
   background: radial-gradient(
     circle at 0 100%,
     transparent 24px,
@@ -196,7 +191,7 @@ h2 {
   );
   pointer-events: none;
 }
-/* Base style for the inverted SVGs */
+
 .nav-corner {
   position: absolute;
   width: 20px;
@@ -210,19 +205,14 @@ h2 {
   margin: 0 20px;
   flex-shrink: 0;
 }
-/* Ensure the SVG color matches the background block */
 .nav-corner path {
   fill: var(--brand-cream);
 }
-
-/* Left inverted curve (scoops inward from the left) */
 .nav-corner.corner-left {
   top: 0;
   left: -20px;
   transform: scaleX(-1);
 }
-
-/* Bottom inverted curve (scoops downward from the bottom) */
 .nav-corner.corner-bottom {
   bottom: -20px;
   right: 0;
@@ -230,7 +220,7 @@ h2 {
 }
 
 .nav-inner {
-  height: 84px; /* Matches Figma's exact overlay height */
+  height: 84px;
   max-width: none;
   display: flex;
   align-items: center;
@@ -339,14 +329,14 @@ h2 {
   display: flex;
   flex-direction: column;
 }
-/*            needs check          */
+
 .call-label {
   font-size: 11px;
   font-weight: 1;
   color: #ffff;
   text-transform: uppercase;
 }
-/*                       */
+
 .call-num {
   font-size: 14px;
   font-weight: 700;
@@ -402,25 +392,22 @@ h2 {
    ═══════════════════════════════════════════ */
 .hero-banner {
   position: relative;
-  /* Swapped to your local banner.jpg */
   background:
     linear-gradient(rgba(31, 62, 30, 0.65), rgba(31, 62, 30, 0.65)),
     url("./banner.jpg");
   background-size: cover;
   background-position: center;
-  height: 480px; /* Slightly taller to match Figma proportions */
+  height: 480px;
   display: flex;
   align-items: center;
-  /* Make ALL 4 corners rounded so it looks like a floating card */
   border-radius: 32px;
-  /* Give it margins on all sides so the cream background shows above it */
   margin: 24px;
 }
 
 .hero-content {
   color: var(--white);
-  text-align: left; /* Ensures text is left-aligned */
-  max-width: 600px; /* Optional: keeps text from stretching across the full width */
+  text-align: left;
+  max-width: 600px;
 }
 
 .hero-content h1 {
@@ -431,11 +418,9 @@ h2 {
   font-weight: 100;
 }
 .hero-banner .container {
-  width: 100%; /* Forces the container to stretch across the banner */
+  width: 100%;
   display: flex;
-  justify-content: flex-start; /* Aligns the inner content to the left */
-
-  /* Matches the 40px left padding you added to the .nav-inner so the text and logo perfectly align */
+  justify-content: flex-start;
   padding-left: 40px;
 }
 .breadcrumb {
@@ -483,13 +468,12 @@ h2 {
   }
 }
 
-/* --- Who We Are Section Image Layout --- */
 .who-image-container {
   position: relative;
-  width: 100%; /* CHANGED FROM 50% - Let Grid define width */
-  height: 520px; /* Tall proportional height matching Figma */
+  width: 100%;
+  height: 520px;
   border-radius: 32px;
-  overflow: hidden; /* Rounds the image corners perfectly */
+  overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
 }
 .who-main-img {
@@ -503,22 +487,21 @@ h2 {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-radius: 30px; /* Adjust if your global card radiuses differ */
+  border-radius: 30px;
 }
 
-/* --- Top Right Corner Overlay Layout --- */
 .top-right-overlay {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--brand-cream); /* FIXED */
+  background-color: var(--brand-cream);
   padding: 0 0 25px 25px;
   border-bottom-left-radius: var(--radius-lg);
 }
 .color {
   background-color: #ffff;
 }
-/* Base properties for the inverted radius mask vectors */
+
 .corner-vector {
   position: absolute;
   width: 20px;
@@ -526,26 +509,22 @@ h2 {
   pointer-events: none;
 }
 
-/* Top-Left mask positioning & flip logic */
 .corner-vector.corner-tl {
   top: 0;
   left: -20px;
   transform: scaleX(-1);
 }
 
-/* Bottom-Right mask positioning & flip logic */
 .corner-vector.corner-br {
   bottom: -20px;
   right: 0;
   transform: scaleY(-1);
 }
 
-/* SVG Path fill behavior matches back plate background colors */
 .corner-vector path {
-  fill: var(--brand-cream); /* FIXED */
+  fill: var(--brand-cream);
 }
 
-/* --- Controls & Buttons Formatting --- */
 .overlay-controls {
   display: flex;
   align-items: center;
@@ -554,7 +533,6 @@ h2 {
   margin-right: 15px;
 }
 
-/* Search Button Style inside Image Component Frame */
 .btn-search-overlay {
   background: #ffffff;
   border: 1px solid #e2e2e2;
@@ -573,9 +551,8 @@ h2 {
   background-color: #efefe9;
 }
 
-/* Get In Touch Button Styling */
 .btn-cta-overlay {
-  background-color: #ead865; /* Matches the golden/yellow theme color from Figma */
+  background-color: #ead865;
   color: #1f3e1e;
   font-family: "Signika", sans-serif;
   font-weight: 600;
@@ -598,7 +575,6 @@ h2 {
   transform: translateY(-1px);
 }
 
-/* Tiny diagonal icon adjustment */
 .btn-cta-overlay .arrow-icon {
   font-size: 18px;
   display: inline-block;
@@ -628,11 +604,11 @@ h2 {
   bottom: 0;
   right: 0;
   background-color: var(--brand-cream, #f4f4ec);
-  padding: 20px 0 0 20px; /* Frame space around the yellow block */
+  padding: 20px 0 0 20px;
   border-top-left-radius: 32px;
   z-index: 2;
 }
-/* Top Inverted Scoop */
+
 .stat-badge-wrapper::before {
   content: "";
   position: absolute;
@@ -647,7 +623,6 @@ h2 {
   );
 }
 
-/* Left Corner Mask Pin */
 .stat-badge-wrapper::after {
   content: "";
   position: absolute;
@@ -661,7 +636,6 @@ h2 {
     var(--brand-cream, #f4f4ec) 24.5px
   );
 }
-
 .stat-number {
   font-size: 46px;
   font-weight: 800;
@@ -707,7 +681,7 @@ h2 {
 }
 @media (max-width: 991px) {
   .who-grid {
-    grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    grid-template-columns: 1fr;
     gap: 50px;
   }
 
@@ -780,13 +754,13 @@ h2 {
 .ticker-item {
   display: inline-flex;
   align-items: center;
-  font-size: 100px; /* Matches the Figma design size */
-  font-weight: 700; /* Matches the Figma design weight */
-  text-transform: none; /* Removes the uppercase override */
+  font-size: 100px;
+  font-weight: 700;
+  text-transform: none;
   font-family: "Signika", sans-serif;
-  letter-spacing: 0; /* Removes extra spacing */
+  letter-spacing: 0;
   color: transparent;
-  -webkit-text-stroke: 2px #cbd5cb; /* Slightly thicker stroke to balance the larger font */
+  -webkit-text-stroke: 2px #cbd5cb;
   padding: 0 20px;
 }
 
@@ -1070,11 +1044,6 @@ h2 {
   letter-spacing: 0.05em;
 }
 
-/* ═══════════════════════════════════════════
-       INFO STRIP
-       ═══════════════════════════════════════════ */ /* ═══════════════════════════════════════════
-       YELLOW INFO STRIP
-       ═══════════════════════════════════════════ */
 .info-strip {
   background: var(--brand-yellow);
   padding: 24px 0;
@@ -1096,7 +1065,7 @@ h2 {
 }
 
 .strip-links a {
-  font-size: 11px; /* Slightly smaller to match Figma */
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.1em;
   color: var(--brand-dark);
@@ -1129,8 +1098,6 @@ h2 {
   font-size: 14px;
   color: var(--brand-dark);
 }
-
-/* Added White Circle backgrounds for icons */
 .contact-icon {
   width: 34px;
   height: 34px;
@@ -1159,7 +1126,7 @@ h2 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.2fr 3fr; /* Logo column on left, content columns on right */
+  grid-template-columns: 1.2fr 3fr;
   gap: 60px;
   margin-bottom: 60px;
 }
@@ -1184,12 +1151,11 @@ h2 {
   gap: 12px;
 }
 
-/* Removed the harsh border and added a soft background per Figma */
 .social-btn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #f4f6f0; /* Soft greenish-gray */
+  background: #f4f6f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1203,14 +1169,12 @@ h2 {
   transform: translateY(-2px);
 }
 
-/* Right Side Wrapper */
 .footer-right-side {
   display: flex;
   flex-direction: column;
-  gap: 50px; /* Space between Tagline and 3 columns */
+  gap: 50px;
 }
 
-/* Tagline replacing the bottom beige box */
 .footer-tagline h4 {
   font-size: 22px;
   line-height: 1.4;
@@ -1219,7 +1183,6 @@ h2 {
   max-width: 600px;
 }
 
-/* The 3 inner columns grid */
 .footer-links-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
@@ -1237,7 +1200,6 @@ h2 {
   }
 }
 
-/* Removed ::after underline to match Figma */
 .footer-col h5 {
   font-size: 18px;
   margin-bottom: 24px;
@@ -1265,10 +1227,9 @@ h2 {
   padding-left: 4px;
 }
 
-/* Cleaned up the spacing for Working Hours */
 .working-hours li {
   display: flex;
-  gap: 8px; /* Left aligned, not pushed to the edges */
+  gap: 8px;
   justify-content: flex-start;
 }
 
@@ -1314,7 +1275,6 @@ h2 {
   color: var(--text-mid);
 }
 
-/* Decorative Leaves backgrounds */
 .decor-leaf {
   position: absolute;
   bottom: -10px;
