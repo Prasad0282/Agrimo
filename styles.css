@@ -1,0 +1,1334 @@
+/* ═══════════════════════════════════════════
+       COLOR TOKENS & SYSTEM DEFAULTS
+       ═══════════════════════════════════════════ */
+:root {
+  --brand-dark: #1f3e1e; /* Rich Forest Green */
+  --brand-green: #498048; /* Mid Green accent */
+  --brand-lime: #82b444; /* Lighter accent green */
+  --brand-yellow: #e1cd4d; /* Signature Yellow */
+  --brand-cream: #f4f2ea; /* Cream background */
+  --white: #ffffff;
+  --text-dark: #162415;
+  --text-mid: #546253;
+  --text-light: #8e9c8d;
+  --radius-sm: 8px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+  --radius-full: 999px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Signika", sans-serif;
+  background: var(--brand-cream);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.95rem;
+  }
+}
+
+.signika {
+  font-family: "Signika", sans-serif;
+}
+/* ─── CUSTOM UI COMPONENT ELEMENTS ───────── */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px; /* Larger, matching the Figma design */
+  font-weight: 600; /* Slightly softer than 700 */
+  text-transform: capitalize; /* Changes "WHO WE ARE" to "Who We Are" */
+  letter-spacing: normal; /* Removes the wide letter spacing */
+  color: var(--brand-dark); /* Darker text color */
+  background: var(--white); /* Pure white background */
+  padding: 8px 24px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Very subtle shadow to pop off the cream background */
+}
+.eyebrow-icon,
+.eyebrow svg {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+/* ═══════════════════════════════════════════
+       
+       ═══════════════════════════════════════════ */
+/* Ensure the  overlays the hero banner image underneath */
+.navbar {
+  position: absolute;
+  top: 24px; /* Matches the  new margin-top */
+  left: 24px; /* Matches the  new margin-left */
+  right: 24px; /* Matches the  new margin-right */
+  width: auto;
+  z-index: 50;
+}
+.navbar .nav-inner {
+  max-width: none;
+  padding: 0 0 0 40px; /* Keep left padding for the logo, remove right padding */
+}
+
+/* Push the hero content down so it isn't hidden behind the text links */
+.hero-banner {
+  position: relative;
+  padding-top: 120px; /* Adjust based on your header height */
+  /* Make sure your background tomato image covers this section */
+}
+
+.hero-banner {
+  position: relative;
+  /* Swapped to your local banner.jpg */
+  background:
+    linear-gradient(rgba(31, 62, 30, 0.65), rgba(31, 62, 30, 0.65)),
+    url("./banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 480px; /* Slightly taller to match Figma proportions */
+  display: flex;
+  align-items: center;
+  /* Make ALL 4 corners rounded so it looks like a floating card */
+  border-radius: 32px;
+  /* Give it margins on all sides so the cream background shows above it */
+  margin: 24px;
+}
+/* Layout for the right side of the nav */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* ═══════════════════════════════════════════
+   3. THE WHITE CUTOUT (Actions Overlay)
+   ═══════════════════════════════════════════ */
+
+.nav-actions-overlay {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  align-self: flex-start;
+  gap: 15px;
+  background-color: var(--brand-cream, #fdfbf7);
+  padding: 0 24px 0 30px;
+  border-bottom-left-radius: 32px;
+  border-top-right-radius: 32px; /* Perfectly matches banner radius */
+}
+.nav-actions-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -24px;
+  width: 24px;
+  height: 24px;
+  /* Radial gradient flawlessly draws an inverted corner, preventing wedge glitches */
+  background: radial-gradient(
+    circle at 0 100%,
+    transparent 24px,
+    var(--brand-cream, #fdfbf7) 24.5px
+  );
+  pointer-events: none;
+}
+.nav-actions-overlay::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 0 100%,
+    transparent 24px,
+    var(--brand-cream, #fdfbf7) 24.5px
+  );
+  pointer-events: none;
+}
+/* Base style for the inverted SVGs */
+.nav-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.ticker-star-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+/* Ensure the SVG color matches the background block */
+.nav-corner path {
+  fill: var(--brand-cream);
+}
+
+/* Left inverted curve (scoops inward from the left) */
+.nav-corner.corner-left {
+  top: 0;
+  left: -20px;
+  transform: scaleX(-1);
+}
+
+/* Bottom inverted curve (scoops downward from the bottom) */
+.nav-corner.corner-bottom {
+  bottom: -20px;
+  right: 0;
+  transform: scaleY(-1);
+}
+
+.nav-inner {
+  height: 84px; /* Matches Figma's exact overlay height */
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  justify-content: space-between;
+  padding: 0 0 0 40px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo-box {
+  width: 120px;
+  height: 40px;
+
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.logo-letter {
+  color: var(--brand-yellow);
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.logo-leaf {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 12px;
+  height: 12px;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--brand-dark);
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-links a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #efe6e6;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #eddd5e;
+}
+.nav-links a:not(:last-child)::after {
+  content: "•";
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 16px;
+}
+.nav-links a.has-dot::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--brand-yellow);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.nav-call {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 24px;
+}
+.call-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-info {
+  display: flex;
+  flex-direction: column;
+}
+/*            needs check          */
+.call-label {
+  font-size: 11px;
+  font-weight: 1;
+  color: #ffff;
+  text-transform: uppercase;
+}
+/*                       */
+.call-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffff;
+}
+
+.btn-search {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.btn-search:hover {
+  background: var(--brand-cream);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #eddd5e;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 26px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 15px rgba(225, 205, 77, 0.15);
+  transition: var(--transition);
+}
+
+.btn-cta:hover {
+  background: #d5c240;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .nav-links,
+  .nav-call {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   1. HERO BANNER UPDATE
+   ═══════════════════════════════════════════ */
+.hero-banner {
+  position: relative;
+  /* Swapped to your local banner.jpg */
+  background:
+    linear-gradient(rgba(31, 62, 30, 0.65), rgba(31, 62, 30, 0.65)),
+    url("./banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 480px; /* Slightly taller to match Figma proportions */
+  display: flex;
+  align-items: center;
+  /* Make ALL 4 corners rounded so it looks like a floating card */
+  border-radius: 32px;
+  /* Give it margins on all sides so the cream background shows above it */
+  margin: 24px;
+}
+
+.hero-content {
+  color: var(--white);
+  text-align: left; /* Ensures text is left-aligned */
+  max-width: 600px; /* Optional: keeps text from stretching across the full width */
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  color: var(--white);
+  margin-bottom: 12px;
+  font-family: "Signika", sans-serif;
+  font-weight: 100;
+}
+.hero-banner .container {
+  width: 100%; /* Forces the container to stretch across the banner */
+  display: flex;
+  justify-content: flex-start; /* Aligns the inner content to the left */
+
+  /* Matches the 40px left padding you added to the .nav-inner so the text and logo perfectly align */
+  padding-left: 40px;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.breadcrumb a {
+  opacity: 0.8;
+  transition: var(--transition);
+}
+
+.breadcrumb a:hover {
+  opacity: 1;
+}
+
+.breadcrumb span.active {
+  color: var(--brand-yellow);
+}
+
+/* ═══════════════════════════════════════════
+       WHO WE ARE
+       ═══════════════════════════════════════════ */
+.who-section {
+  padding: 120px 0;
+  background-color: var(--brand-cream, #f4f4ec);
+}
+
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .who-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* --- Who We Are Section Image Layout --- */
+.who-image-container {
+  position: relative;
+  width: 100%; /* CHANGED FROM 50% - Let Grid define width */
+  height: 520px; /* Tall proportional height matching Figma */
+  border-radius: 32px;
+  overflow: hidden; /* Rounds the image corners perfectly */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+.who-main-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.who-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 30px; /* Adjust if your global card radiuses differ */
+}
+
+/* --- Top Right Corner Overlay Layout --- */
+.top-right-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--brand-cream); /* FIXED */
+  padding: 0 0 25px 25px;
+  border-bottom-left-radius: var(--radius-lg);
+}
+.color {
+  background-color: #ffff;
+}
+/* Base properties for the inverted radius mask vectors */
+.corner-vector {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+/* Top-Left mask positioning & flip logic */
+.corner-vector.corner-tl {
+  top: 0;
+  left: -20px;
+  transform: scaleX(-1);
+}
+
+/* Bottom-Right mask positioning & flip logic */
+.corner-vector.corner-br {
+  bottom: -20px;
+  right: 0;
+  transform: scaleY(-1);
+}
+
+/* SVG Path fill behavior matches back plate background colors */
+.corner-vector path {
+  fill: var(--brand-cream); /* FIXED */
+}
+
+/* --- Controls & Buttons Formatting --- */
+.overlay-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+
+/* Search Button Style inside Image Component Frame */
+.btn-search-overlay {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1f3e1e;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-search-overlay:hover {
+  background-color: #efefe9;
+}
+
+/* Get In Touch Button Styling */
+.btn-cta-overlay {
+  background-color: #ead865; /* Matches the golden/yellow theme color from Figma */
+  color: #1f3e1e;
+  font-family: "Signika", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 0 28px;
+  height: 50px;
+  border-radius: 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.btn-cta-overlay:hover {
+  background-color: #e2ce55;
+  transform: translateY(-1px);
+}
+
+/* Tiny diagonal icon adjustment */
+.btn-cta-overlay .arrow-icon {
+  font-size: 18px;
+  display: inline-block;
+  transform: translateY(-1px);
+}
+
+.who-main-img {
+  border-radius: var(--radius-md);
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.stat-badge {
+  background: #ead865;
+  padding: 30px 35px;
+  border-radius: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 180px;
+}
+.stat-badge-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--brand-cream, #f4f4ec);
+  padding: 20px 0 0 20px; /* Frame space around the yellow block */
+  border-top-left-radius: 32px;
+  z-index: 2;
+}
+/* Top Inverted Scoop */
+.stat-badge-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 0 0,
+    transparent 24px,
+    var(--brand-cream, #f4f4ec) 24.5px
+  );
+}
+
+/* Left Corner Mask Pin */
+.stat-badge-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -24px;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(
+    circle at 0 0,
+    transparent 24px,
+    var(--brand-cream, #f4f4ec) 24.5px
+  );
+}
+
+.stat-number {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  color: #1f3e1e;
+  display: flex;
+  align-items: flex-start;
+}
+
+.stat-asterisk {
+  font-size: 26px;
+  color: #5a8d46;
+  margin-right: 2px;
+}
+.stat-number sup {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 4px;
+  margin-left: 2px;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #000;
+}
+
+.who-content h2 {
+  margin-bottom: 24px;
+}
+
+.who-desc {
+  color: var(--text-mid);
+  margin-bottom: 36px;
+  font-size: 16px;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+@media (max-width: 991px) {
+  .who-grid {
+    grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    gap: 50px;
+  }
+
+  .who-image-container {
+    height: 400px;
+  }
+}
+@media (max-width: 576px) {
+  .features-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feature-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: #e8e6dc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-green);
+}
+
+.feature-card h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+       MARQUEE TICKER
+       ═══════════════════════════════════════════ */
+.ticker-container {
+  background: transparent;
+
+  padding: 30px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ticker-wrapper {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  font-size: 100px; /* Matches the Figma design size */
+  font-weight: 700; /* Matches the Figma design weight */
+  text-transform: none; /* Removes the uppercase override */
+  font-family: "Signika", sans-serif;
+  letter-spacing: 0; /* Removes extra spacing */
+  color: transparent;
+  -webkit-text-stroke: 2px #cbd5cb; /* Slightly thicker stroke to balance the larger font */
+  padding: 0 20px;
+}
+
+.ticker-star {
+  width: 24px;
+  height: 24px;
+  fill: var(--brand-green);
+  margin: 0 20px;
+}
+
+/* ═══════════════════════════════════════════
+       SERVICES SECTION
+       ═══════════════════════════════════════════ */
+.services-section {
+  padding: 90px 0;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.services-header h2 {
+  margin-top: 10px;
+}
+
+.services-slider-container {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.services-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  scroll-behavior: smooth;
+}
+.service-card {
+  min-width: calc(25% - 22.5px);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
+  position: relative;
+  transition: var(--transition);
+}
+
+@media (max-width: 1200px) {
+  .service-card {
+    min-width: calc(33.333% - 20px);
+  }
+}
+@media (max-width: 900px) {
+  .service-card {
+    min-width: calc(50% - 15px);
+  }
+}
+@media (max-width: 600px) {
+  .service-card {
+    min-width: 100%;
+  }
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 45px rgba(31, 62, 30, 0.08);
+}
+
+.image-circle-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 24px auto;
+}
+
+.image-circle-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-arrow-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.card-arrow-btn:hover {
+  background: var(--brand-green);
+}
+.card-arrow-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+.service-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  color: var(--text-light);
+  margin-bottom: 10px;
+}
+
+.cat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.cat-dot.fertilizer {
+  background: var(--brand-green);
+}
+.cat-dot.fruits {
+  background: var(--brand-yellow);
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-dark);
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d5d2c5;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background: var(--brand-yellow);
+  width: 10px;
+  border-radius: 50%;
+}
+
+/* ═══════════════════════════════════════════
+       TESTIMONIALS SECTION
+       ═══════════════════════════════════════════ */
+.testimonials-section {
+  padding: 90px 0;
+  background: #edeae1;
+}
+
+.testimonials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.nav-arrow-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-full);
+  background: var(--white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-dark);
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.arrow-btn:hover {
+  background: var(--brand-dark);
+  color: var(--white);
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+  min-width: calc(33.333% - 20px);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .testimonial-card {
+    min-width: calc(50% - 15px);
+  }
+}
+@media (max-width: 650px) {
+  .testimonial-card {
+    min-width: 100%;
+  }
+}
+
+.quote-badge {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: var(--brand-yellow);
+  opacity: 0.6;
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  fill: var(--brand-yellow);
+}
+
+.testimonial-card p {
+  color: var(--text-mid);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.client-name {
+  font-weight: 700;
+  color: var(--brand-dark);
+  font-size: 16px;
+}
+
+.client-role {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand-green);
+  letter-spacing: 0.05em;
+}
+
+/* ═══════════════════════════════════════════
+       INFO STRIP
+       ═══════════════════════════════════════════ */ /* ═══════════════════════════════════════════
+       YELLOW INFO STRIP
+       ═══════════════════════════════════════════ */
+.info-strip {
+  background: var(--brand-yellow);
+  padding: 24px 0;
+}
+
+.info-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.strip-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.strip-links a {
+  font-size: 11px; /* Slightly smaller to match Figma */
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--brand-dark);
+  transition: var(--transition);
+}
+
+.strip-links a:hover {
+  opacity: 0.7;
+}
+
+.strip-dot {
+  width: 5px;
+  height: 5px;
+  background: #ffff;
+  border-radius: 50%;
+}
+
+.strip-contacts {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.strip-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--brand-dark);
+}
+
+/* Added White Circle backgrounds for icons */
+.contact-icon {
+  width: 34px;
+  height: 34px;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--brand-green);
+}
+
+/* ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ */
+.footer {
+  background: var(--white);
+  padding: 90px 0 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 3fr; /* Logo column on left, content columns on right */
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.footer-brand p {
+  margin-top: 20px;
+  margin-bottom: 24px;
+  color: var(--text-mid);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+/* Removed the harsh border and added a soft background per Figma */
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f4f6f0; /* Soft greenish-gray */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-green);
+  transition: var(--transition);
+}
+
+.social-btn:hover {
+  background: var(--brand-green);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Right Side Wrapper */
+.footer-right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* Space between Tagline and 3 columns */
+}
+
+/* Tagline replacing the bottom beige box */
+.footer-tagline h4 {
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--brand-dark);
+  font-weight: 700;
+  max-width: 600px;
+}
+
+/* The 3 inner columns grid */
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .footer-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Removed ::after underline to match Figma */
+.footer-col h5 {
+  font-size: 18px;
+  margin-bottom: 24px;
+  color: var(--brand-dark);
+  font-weight: 700;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: var(--text-mid);
+}
+
+.footer-col ul li a {
+  transition: var(--transition);
+  color: var(--text-mid);
+}
+
+.footer-col ul li a:hover {
+  color: var(--brand-green);
+  padding-left: 4px;
+}
+
+/* Cleaned up the spacing for Working Hours */
+.working-hours li {
+  display: flex;
+  gap: 8px; /* Left aligned, not pushed to the edges */
+  justify-content: flex-start;
+}
+
+.working-hours li span:last-child {
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+
+.footer-col p {
+  color: var(--text-mid);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-copyright-bar {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-copyright-links {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+.footer-copyright-links a {
+  color: var(--text-mid);
+  transition: var(--transition);
+}
+
+.footer-copyright-links a:hover {
+  color: var(--brand-green);
+}
+
+.copyright-text {
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+/* Decorative Leaves backgrounds */
+.decor-leaf {
+  position: absolute;
+  bottom: -10px;
+  left: 5%;
+  opacity: 0.04;
+  pointer-events: none;
+  width: 150px;
+}
+
+.decor-wheat {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.15;
+  pointer-events: none;
+  width: 120px;
+}

@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agrimo test</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════
+       NAVBAR
+       ═══════════════════════════════════════════ -->
+    <header class="navbar">
+      <div class="nav-inner container">
+        <a href="#" class="logo">
+          <div class="logo-box">
+            <img
+              src="./logo-white.svg.png"
+              class="logo-img"
+              alt="Agrimo Logo"
+            />
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#" class="Signika">Home</a>
+          <a href="#" class="Signika active">Pages</a>
+          <a href="#" class="Signika">Services</a>
+          <a href="#" class="Signika">Portfolio</a>
+          <a href="#" class="Signika">Blog</a>
+          <a href="#" class="Signika">Contact Us</a>
+        </nav>
+
+        <div class="nav-right">
+          <div class="nav-call">
+            <div class="call-icon">
+              <img src="./Icon (2).png" alt="Phone Icon" />
+            </div>
+            <div class="call-info">
+              <span class="call-label Signika">Call us Now</span>
+              <span class="call-num Signika">+1(212)255-511</span>
+            </div>
+          </div>
+
+          <div class="nav-actions-overlay">
+            <button class="btn-search" aria-label="Search">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </button>
+
+            <a href="#" class="btn-cta Signika">
+              Get In Touch
+              <img src="./Vector.png" alt="arrow" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+       HERO BANNER
+       ═══════════════════════════════════════════ -->
+    <section class="hero-banner">
+      <div class="container">
+        <div class="hero-content">
+          <h1>About Us</h1>
+          <nav class="breadcrumb" aria-label="breadcrumb">
+            <a href="#">AGRIMO</a>
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+            <span class="active">ABOUT US</span>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+   WHO WE ARE SECTION
+   ═══════════════════════════════════════════ -->
+    <section class="who-section">
+      <div class="container">
+        <div class="who-grid">
+          <!-- COLUMN 1: LEFT SIDE IMAGE -->
+          <div class="who-image-container">
+            <img
+              src="./women.jpg"
+              alt="Woman working inside nursery greenhouse"
+              class="who-main-img"
+            />
+
+            <!-- Cutout & Stat Badge -->
+            <div class="stat-badge-wrapper">
+              <div class="stat-badge">
+                <div class="stat-number">
+                  <span class="stat-asterisk">*</span>435<sup>+</sup>
+                </div>
+                <span class="stat-label">Growth Tons' of Harvest</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMN 2: RIGHT SIDE CONTENT -->
+          <div class="who-content">
+            <div class="eyebrow">
+              <img src="./rev-arrow.png" alt="Leaf icon" class="eyebrow-icon" />
+                Who We Are
+            
+            </div>
+            <h2>Currently we are growing and selling organic food</h2>
+            <p class="who-desc">
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority have suffered alteration in some form, by
+              injected humour, or randomised words which don't look even.
+            </p>
+
+            <!-- Features List Grid -->
+            <div class="features-list">
+              <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                  <img src="Icon (5).png" />
+                </div>
+                <h4>Eco Farms Worldwide</h4>
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                  <img src="Icon (6).png" />
+                </div>
+                <h4>Special Equipment</h4>
+                <p>
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+       MARQUEE TICKER (Stroke outline infinite scrolling band)
+       ═══════════════════════════════════════════ -->
+    <div class="ticker-container">
+      <div class="ticker-wrapper">
+        <div class="ticker-item">Vegetables</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+
+        <div class="ticker-item">Agriculture</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+
+        <div class="ticker-item">Farming</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+
+        <div class="ticker-item">Organic</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+        <!-- Duplicate content to ensure smooth seamless wrapping -->
+        <div class="ticker-item">Vegetables</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+
+        <div class="ticker-item">Agriculture</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+        <div class="ticker-item">Farming</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+        <div class="ticker-item">Organic</div>
+        <img src="./star.png" alt="star" class="ticker-star-img" />
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+       SERVICES SECTION
+       ═══════════════════════════════════════════ -->
+    
+<section class="services-section">
+  <div class="container">
+    <div class="services-header">
+      <div class="eyebrow">
+        <img src="./rev-arrow.png" alt="Leaf icon" class="eyebrow-icon" />
+        Who We Are
+      </div>
+      <h2>Best Agriculture Services</h2>
+    </div>
+
+    <div class="services-slider-container">
+      <div class="services-track" id="servicesTrack">
+        
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="image-circle-container">
+            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=400&q=80" alt="Harvest Concepts" />
+            <div class="card-arrow-btn">
+              <img src="./vector.png" alt="Arrow" class="card-arrow-icon" />
+            </div>
+          </div>
+          <div class="service-cat">
+            <span class="cat-dot fertilizer"></span> Fertilizer
+          </div>
+          <h3>Harvest Concepts</h3>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="image-circle-container">
+            <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?auto=format&fit=crop&w=400&q=80" alt="Farming Products" />
+            <div class="card-arrow-btn">
+              <img src="./vector.png" alt="Arrow" class="card-arrow-icon" />
+            </div>
+          </div>
+          <div class="service-cat">
+            <span class="cat-dot fruits"></span> Fruits
+          </div>
+          <h3>Farming Products</h3>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="image-circle-container">
+            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=400&q=80" alt="Soil fertilization" />
+            <div class="card-arrow-btn">
+              <img src="./vector.png" alt="Arrow" class="card-arrow-icon" />
+            </div>
+          </div>
+          <div class="service-cat">
+            <span class="cat-dot fertilizer"></span> Fertilizer
+          </div>
+          <h3>Soil fertilization</h3>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card">
+          <div class="image-circle-container">
+            <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=400&q=80" alt="Fresh vegetables" />
+            <div class="card-arrow-btn">
+              <img src="./vector.png" alt="Arrow" class="card-arrow-icon" />
+            </div>
+          </div>
+          <div class="service-cat">
+            <span class="cat-dot fruits"></span> Fruits
+          </div>
+          <h3>Fresh vegetables</h3>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-card">
+          <div class="image-circle-container">
+            <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=400&q=80" alt="Crop Management" />
+            <div class="card-arrow-btn">
+              <img src="./vector.png" alt="Arrow" class="card-arrow-icon" />
+            </div>
+          </div>
+          <div class="service-cat">
+            <span class="cat-dot fertilizer"></span> Fertilizer
+          </div>
+          <h3>Crop Management</h3>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Slider indicator dots -->
+    <div class="slider-controls" id="servicesDots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+    </div>
+  </div>
+</section>
+    <!-- ═══════════════════════════════════════════
+       TESTIMONIALS SECTION
+       ═══════════════════════════════════════════ -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="testimonials-header">
+          <div>
+            <div class="eyebrow">
+              <img src="./rev-arrow.png" alt="Leaf icon" class="eyebrow-icon" />
+              </svg>
+              Testimonial
+            </div>
+            <h2>What our customers say</h2>
+          </div>
+          <div class="nav-arrow-buttons">
+            <button
+              class="arrow-btn"
+              id="testiPrev"
+              aria-label="Previous Testimonial"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              class="arrow-btn"
+              id="testiNext"
+              aria-label="Next Testimonial"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div style="overflow: hidden; padding: 10px 0">
+          <div class="testimonial-track" id="testiTrack">
+            <div class="testimonial-card">
+              <div class="quote-badge">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <div class="testimonial-stars">
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+              </div>
+              <p>
+                "I would recommend practitioners at this center to everyone!
+                They are great to work with and are excellent trainers. Thank
+                you all!"
+              </p>
+              <div class="client-info">
+                <img
+                  src="./craig.jpg.png"
+                  alt="Daniel Craig"
+                  class="client-avatar"
+                />
+                <div>
+                  <div class="client-name">Daniel Craig</div>
+                  <div class="client-role">CO FOUNDER</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="quote-badge">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <div class="testimonial-stars">
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg
+                  class="star"
+                  viewBox="0 0 24 24"
+                  fill="#CCCCCC"
+                  style="fill: #e2e0d5"
+                >
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+              </div>
+              <p>
+                "The standard of fresh organic items is absolutely unmatched.
+                Incredible communication and fast turnaround timelines for
+                wholesale."
+              </p>
+              <div class="client-info">
+                <img
+                  src="dyer.jpg.png"
+                  alt="Amelia Dyer"
+                  class="client-avatar"
+                />
+                <div>
+                  <div class="client-name">Amelia Dyer</div>
+                  <div class="client-role">MANAGER</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="quote-badge">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                  />
+                </svg>
+              </div>
+              <div class="testimonial-stars">
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+                <svg class="star" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2L15 9H22L17 14L19 21L12 17L5 21L7 14L2 9H9L12 2Z"
+                  />
+                </svg>
+              </div>
+              <p>
+                "Highly polished agricultural setups. Their soil fertilizer
+                guidelines gave us a 150% growth rate improvement on winter
+                tomatoes."
+              </p>
+              <div class="client-info">
+                <img
+                  src="./cavil.jpg.png"
+                  alt="Henry Cavil"
+                  class="client-avatar"
+                />
+                <div>
+                  <div class="client-name">Henry Cavil</div>
+                  <div class="client-role">CEO &amp; FOUNDER</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- ═══════════════════════════════════════════
+       YELLOW INFO STRIP
+       ═══════════════════════════════════════════ -->
+    <div class="info-strip">
+      <div class="info-strip-inner container">
+        <div class="strip-links">
+          <a href="#">FARMERS</a>
+          <span class="strip-dot"></span>
+          <a href="#">ORGANIC</a>
+          <span class="strip-dot"></span>
+          <a href="#">FOODS</a>
+          <span class="strip-dot"></span>
+          <a href="#">PRODUCT</a>
+        </div>
+
+        <div class="strip-contacts">
+          <div class="strip-contact-item">
+            <div class="contact-icon">
+             <img src="Icon (4).png"/>
+            </div>
+            <span>+1(212) 255-511</span>
+          </div>
+          <div class="strip-contact-item">
+            <div class="contact-icon">
+             <img src="Icon (3).png"/>
+            </div>
+            <span>noreply@pbminfotech.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="footer-inner container">
+        <div class="footer-grid">
+          
+          <!-- Left Branding Column -->
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <div class="logo-box">
+                <img src="./logo.svg.png" class="logo-img" alt="Agrimo Logo" />
+              </div>
+            </a>
+            <p>
+              Mauris sed molestie sem. Sed vel vestibulum elit, non accumsan
+              risus. In vitae sapien viverra est Duo ei ullum inani senserit.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-btn" aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="X / Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content Area -->
+          <div class="footer-right-side">
+            <!-- Tagline moved to the top of the columns to match Figma -->
+            <div class="footer-tagline">
+              <h4>
+                Professional &amp; modern, a theme designed to help your business stand out from the rest.
+              </h4>
+            </div>
+            
+            <div class="footer-links-grid">
+              <div class="footer-col">
+                <h5>Useful Link</h5>
+                <ul>
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <h5>Working Time</h5>
+                <ul class="working-hours">
+                  <li><span>Mon - Fri:</span> <span>9.00am - 5.00pm</span></li>
+                  <li><span>Saturday:</span> <span>10.00am - 6.00pm</span></li>
+                  <li><span>Sunday:</span> <span>Closed</span></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <h5>Our Address</h5>
+                <p>
+                  Old Westbury 256, New York<br />11201, United States
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="footer-copyright-bar">
+          <div class="footer-copyright-links">
+            <a href="#">Terms &amp; Conditions</a>
+            <span>|</span>
+            <a href="#">Privacy Policy</a>
+          </div>
+          <div class="copyright-text">
+            Copyright © 2024 <a href="#" style="font-weight: 700; color: var(--brand-dark);">Agrimo</a>. All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative SVG overlays -->
+      <svg class="decor-leaf" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 190 Q10 140 20 80 Q30 20 60 10 Q90 20 100 80 Q110 140 60 190Z" fill="#4A7C59" />
+        <line x1="60" y1="190" x2="60" y2="30" stroke="#4A7C59" stroke-width="2" />
+      </svg>
+      <svg class="decor-wheat" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="50" y1="200" x2="50" y2="20" stroke="#C9B060" stroke-width="2" />
+        <ellipse cx="50" cy="30" rx="10" ry="18" fill="#C9B060" transform="rotate(-20 50 30)" />
+        <ellipse cx="50" cy="30" rx="10" ry="18" fill="#C9B060" transform="rotate(20 50 30)" />
+        <ellipse cx="50" cy="55" rx="9" ry="16" fill="#C9B060" transform="rotate(-25 50 55)" />
+        <ellipse cx="50" cy="55" rx="9" ry="16" fill="#C9B060" transform="rotate(25 50 55)" />
+      </svg>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
