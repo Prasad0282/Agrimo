@@ -73,3 +73,6 @@ window.addEventListener("resize", () => {
   testiIndex = 0;
   updateTestimonialsPosition();
 });
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
